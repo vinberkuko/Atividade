@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campinas - Saúde Inteligente e Inovação Tecnológica</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #2980b9;
+            --secondary: #16a085;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            background: var(--primary);
+            color: white;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            background-image: linear-gradient(to right, #2980b9, #3498db);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .chart-container {
+            height: 400px;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--secondary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Campinas - Hub de Saúde Inteligente</h1>
+            <p>Inovações tecnológicas e inteligência artificial na saúde pública (2015-2025)</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="grid">
+            <div class="card">
+                <h2>Pesquisa em IA para Saúde <span class="badge">+420%</span></h2>
+                <div class="chart-container">
+                    <canvas id="iaChart"></canvas>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Indicador</th>
+                            <th>2015</th>
+                            <th>2025</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Projetos de IA em saúde</td>
+                            <td class="highlight">3</td>
+                            <td class="highlight">15</td>
+                        </tr>
+                        <tr>
+                            <td>Investimento em pesquisa (R$ milhões)</td>
+                            <td class="highlight">1.2</td>
+                            <td class="highlight">42.0</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;">* Dados incluem iniciativas da Unicamp, PUC-Campinas e centros de pesquisa locais :cite[2]:cite[4]</p>
+            </div>
+
+            <div class="card">
+                <h2>Infraestrutura Hospitalar Inteligente</h2>
+                <div class="chart-container">
+                    <canvas id="hospitalChart"></canvas>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tecnologia</th>
+                            <th>Implementação</th>
+                            <th>Benefícios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Prontuário Eletrônico</td>
+                            <td class="highlight">98% dos hospitais</td>
+                            <td>Redução de 42% em erros médicos</td>
+                        </tr>
+                        <tr>
+                            <td>Telemedicina</td>
+                            <td class="highlight">22 unidades</td>
+                            <td>630 consultas/mês</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;">* Dados do Hospital das Clínicas e unidades gerenciadas pela FASCAMP :cite[6]</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Eventos e Inovação em Saúde</h2>
+            <div class="chart-container">
+                <canvas id="eventosChart"></canvas>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Evento</th>
+                        <th>Participantes</th>
+                        <th>Temas Principais</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Campinas Health Summit</td>
+                        <td class="highlight">1.200+</td>
+                        <td>IA, robótica, saúde digital</td>
+                    </tr>
+                    <tr>
+                        <td>Startups de Saúde</td>
+                        <td class="highlight">50+</td>
+                        <td>Soluções inovadoras para o SUS</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem;">* Dados da 4ª edição do Campinas Health Technology & Innovation Summit :cite[4]</p>
+        </section>
+
+        <section class="card">
+            <h2>Centros de Pesquisa em Saúde Inteligente</h2>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                <li><strong>Bi0s (Unicamp):</strong> Centro de IA aplicada à saúde com financiamento de R$ 2,5 milhões :cite[2]</li>
+                <li><strong>HIDS:</strong> Hub Internacional de Desenvolvimento Sustentável com foco em saúde digital :cite[4]</li>
+                <li><strong>IOU (Unicamp):</strong> Instituto de Otorrinolaringologia com tecnologia de ponta :cite[6]</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // Gráfico de Pesquisa em IA
+        new Chart(document.getElementById('iaChart'), {
+            type: 'bar',
+            data: {
+                labels: ['2015', '2025'],
+                datasets: [{
+                    label: 'Projetos de IA em Saúde',
+                    data: [3, 15],
+                    backgroundColor: ['#3498db', '#2c3e50'],
+                    borderColor: ['#2980b9', '#1a252f'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Infraestrutura Hospitalar
+        new Chart(document.getElementById('hospitalChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Prontuário Eletrônico', 'Telemedicina', 'Cirurgia Robótica', 'Outros'],
+                datasets: [{
+                    data: [45, 25, 15, 15],
+                    backgroundColor: [
+                        '#16a085',
+                        '#2980b9',
+                        '#e74c3c',
+                        '#f39c12'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Gráfico de Eventos
+        new Chart(document.getElementById('eventosChart'), {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Participantes em Eventos de Saúde',
+                    data: [300, 450, 700, 950, 1200],
+                    borderColor: '#16a085',
+                    backgroundColor: 'rgba(22, 160, 133, 0.1)',
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
