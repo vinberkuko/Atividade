@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educação Inteligente 2025 - As Transformações do Ensino</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2ecc71;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+
+        .chart-container {
+            height: 400px;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--secondary);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 20px;
+            background: var(--accent);
+            color: white;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .trend-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #eee;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Educação Inteligente em 2025</h1>
+            <p>As principais tendências tecnológicas e pedagógicas transformando o ensino</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Panorama da Educação Inteligente</h2>
+            <p>O ano de 2025 marca um ponto de inflexão na educação, com a consolidação de tecnologias como IA, realidade aumentada e aprendizagem adaptativa. Segundo pesquisas, 75% dos professores já concordam com o uso da IA na aprendizagem, embora apenas 39,2% a utilizem regularmente :cite[7].</p>
+            
+            <div class="chart-container">
+                <canvas id="adoptionChart"></canvas>
+            </div>
+            <p style="margin-top: 1rem;">* Dados sobre adoção de tecnologias educacionais em 2025 :cite[7]:cite[8]</p>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h2>Inteligência Artificial na Educação <span class="badge">+420%</span></h2>
+                <div class="chart-container">
+                    <canvas id="aiChart"></canvas>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aplicação</th>
+                            <th>Adoção</th>
+                            <th>Impacto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Assistentes virtuais</td>
+                            <td class="highlight">60% escolas</td>
+                            <td>Redução de 30% no tempo administrativo</td>
+                        </tr>
+                        <tr>
+                            <td>Plataformas adaptativas</td>
+                            <td class="highlight">45% escolas</td>
+                            <td>Aumento de 25% no desempenho</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;">"A IA permite a criação de experiências educacionais adaptativas, ajustando em tempo real com base no desempenho" :cite[7]</p>
+            </div>
+
+            <div class="card">
+                <h2>Ensino Híbrido e Personalizado</h2>
+                <div class="chart-container">
+                    <canvas id="hybridChart"></canvas>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Modalidade</th>
+                            <th>Preferência</th>
+                            <th>Crescimento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Online para adultos</td>
+                            <td class="highlight">70%</td>
+                            <td>+40% desde 2020</td>
+                        </tr>
+                        <tr>
+                            <td>Híbrido (presencial+online)</td>
+                            <td class="highlight">58%</td>
+                            <td>+65% desde 2020</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;">* Dados do INEP sobre preferências de ensino :cite[7]</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>6 Tendências Chave da Educação Inteligente em 2025</h2>
+            
+            <div class="trend-item">
+                <h3>1. Inteligência Artificial como aliada pedagógica</h3>
+                <p>Nos EUA, 60% dos professores usam IA para preparar aulas e corrigir trabalhos, enquanto 70% dos alunos a utilizam para tarefas :cite[7]. No Brasil, plataformas adaptativas estão personalizando o aprendizado com base no desempenho individual.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h3>2. Microlearning e conteúdos curtos</h3>
+                <p>Estudos mostram aumento de 81% para 44% nos resultados de aprendizagem com microvídeos :cite[4]. Plataformas estão adotando pílulas de conhecimento em formatos como stories e reels.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h3>3. Educação socioemocional integrada</h3>
+                <p>Programas de mindfulness e gestão emocional estão sendo incorporados ao currículo, com foco em desenvolver empatia e resiliência :cite[9]. Escolas estão criando espaços seguros para expressão emocional.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h3>4. Realidade Virtual e Aumentada</h3>
+                <p>O mercado de VR na educação deve crescer de US$25,85 bi (2024) para US$67,02 bi até 2029 :cite[4]. Experiências imersivas estão transformando a aprendizagem de história, ciências e artes.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h3>5. Credenciais digitais e microcertificações</h3>
+                <p>97% das instituições que oferecem microcredenciais afirmam que elas melhoram as perspectivas de carreira :cite[4]. Badges digitais estão substituindo diplomas tradicionais em muitas áreas.</p>
+            </div>
+            
+            <div class="trend-item">
+                <h3>6. Sustentabilidade e educação ambiental</h3>
+                <p>Com as mudanças climáticas, escolas estão adotando hortas escolares, projetos de reciclagem e aulas ao ar livre :cite[9]. A educação ambiental está sendo reinserida nos currículos após período de negligência.</p>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="card">
+                <h2>Desafios da Educação Inteligente</h2>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li><strong>Desigualdade tecnológica:</strong> 33% das crianças em países pobres estão fora da escola vs 3% em países ricos :cite[6]</li>
+                    <li><strong>Falta de professores:</strong> 51,6% são temporários nas redes estaduais brasileiras :cite[6]</li>
+                    <li><strong>Financiamento:</strong> Educação recebe apenas 2,97% do orçamento federal :cite[6]</li>
+                    <li><strong>Infraestrutura:</strong> 1,4 milhão de estudantes em escolas sem água tratada :cite[6]</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Oportunidades Emergentes</h2>
+                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                    <li><strong>Edutainment:</strong> Combinação de educação e entretenimento com VR/AR :cite[9]</li>
+                    <li><strong>Ensino bilíngue:</strong> Aumento de 64% na demanda por escolas bilíngues :cite[9]</li>
+                    <li><strong>Educação corporativa:</strong> Previsão de US$ 487 bi até 2030 :cite[4]</li>
+                    <li><strong>Tecnologia assistiva:</strong> Ferramentas para inclusão de alunos com necessidades especiais :cite[8]</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Gráfico de Adoção de Tecnologia
+        new Chart(document.getElementById('adoptionChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['IA na Educação', 'Realidade Virtual', 'Plataformas Adaptativas', 'Microlearning', 'Outros'],
+                datasets: [{
+                    data: [35, 20, 25, 15, 5],
+                    backgroundColor: [
+                        '#3498db',
+                        '#2ecc71',
+                        '#e74c3c',
+                        '#f39c12',
+                        '#9b59b6'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Adoção de Tecnologias Educacionais (2025)'
+                    }
+                }
+            }
+        });
+
+        // Gráfico de IA na Educação
+        new Chart(document.getElementById('aiChart'), {
+            type: 'bar',
+            data: {
+                labels: ['Professores usando IA', 'Alunos usando IA', 'Escolas com assistentes', 'Plataformas adaptativas'],
+                datasets: [{
+                    label: 'Adoção em 2025 (%)',
+                    data: [39, 70, 60, 45],
+                    backgroundColor: [
+                        'rgba(52, 152, 219, 0.7)',
+                        'rgba(46, 204, 113, 0.7)',
+                        'rgba(231, 76, 60, 0.7)',
+                        'rgba(155, 89, 182, 0.7)'
+                    ],
+                    borderColor: [
+                        '#3498db',
+                        '#2ecc71',
+                        '#e74c3c',
+                        '#9b59b6'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Ensino Híbrido
+        new Chart(document.getElementById('hybridChart'), {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                datasets: [{
+                    label: 'Ensino Online para Adultos',
+                    data: [30, 45, 55, 62, 67, 70],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }, {
+                    label: 'Modelo Híbrido',
+                    data: [15, 25, 38, 47, 53, 58],
+                    borderColor: '#2ecc71',
+                    backgroundColor: 'rgba(46, 204, 113, 0.1)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
