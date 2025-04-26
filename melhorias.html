@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tecnologia Transformadora: 5 Áreas Essenciais</title>
+    <style>
+        :root {
+            --health: #e74c3c;
+            --safety: #3498db;
+            --transport: #f39c12;
+            --education: #2ecc71;
+            --connectivity: #9b59b6;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #3498db, #2ecc71);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid;
+            display: inline-block;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out;
+            border-left: 5px solid;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .health-card {
+            border-color: var(--health);
+        }
+        .safety-card {
+            border-color: var(--safety);
+        }
+        .transport-card {
+            border-color: var(--transport);
+        }
+        .education-card {
+            border-color: var(--education);
+        }
+        .connectivity-card {
+            border-color: var(--connectivity);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .card h3::before {
+            content: "";
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .health-card h3::before {
+            background-color: var(--health);
+        }
+        .safety-card h3::before {
+            background-color: var(--safety);
+        }
+        .transport-card h3::before {
+            background-color: var(--transport);
+        }
+        .education-card h3::before {
+            background-color: var(--education);
+        }
+        .connectivity-card h3::before {
+            background-color: var(--connectivity);
+        }
+
+        .stat {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            padding: 0.8rem;
+            border-radius: 8px;
+            background-color: rgba(0,0,0,0.03);
+            animation: pulse 2s infinite;
+        }
+
+        .health-stat {
+            color: var(--health);
+            border-left: 4px solid var(--health);
+        }
+        .safety-stat {
+            color: var(--safety);
+            border-left: 4px solid var(--safety);
+        }
+        .transport-stat {
+            color: var(--transport);
+            border-left: 4px solid var(--transport);
+        }
+        .education-stat {
+            color: var(--education);
+            border-left: 4px solid var(--education);
+        }
+        .connectivity-stat {
+            color: var(--connectivity);
+            border-left: 4px solid var(--connectivity);
+        }
+
+        .solution {
+            background-color: var(--light);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+        }
+
+        .health-solution::before {
+            background-color: var(--health);
+        }
+        .safety-solution::before {
+            background-color: var(--safety);
+        }
+        .transport-solution::before {
+            background-color: var(--transport);
+        }
+        .education-solution::before {
+            background-color: var(--education);
+        }
+        .connectivity-solution::before {
+            background-color: var(--connectivity);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background-color: var(--dark);
+            color: white;
+            border-radius: 15px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tecnologia Transformadora</h1>
+            <p>Como a inovação pode melhorar 5 áreas essenciais da sociedade</p>
+        </header>
+
+        <section>
+            <h2 style="border-color: var(--health);">Saúde Inteligente</h2>
+            <div class="card health-card">
+                <h3>Telemedicina e Diagnóstico por IA</h3>
+                <p>A pandemia acelerou a adoção da telemedicina, mas ainda há muito potencial não explorado.</p>
+                
+                <div class="stat health-stat">
+                    Apenas 39% dos hospitais públicos no Brasil possuem sistemas completos de prontuário eletrônico (DATASUS, 2023)
+                </div>
+                
+                <div class="solution health-solution">
+                    <strong>Solução:</strong> Implementação em escala de sistemas de IA para diagnóstico precoce, como o projeto do Hospital das Clínicas de Campinas que reduziu em 40% o tempo para identificar câncer de mama através de algoritmos de aprendizado profundo.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="border-color: var(--safety);">Segurança Pública</h2>
+            <div class="card safety-card">
+                <h3>Monitoramento Inteligente</h3>
+                <p>Cidades inteligentes estão revolucionando a prevenção criminal.</p>
+                
+                <div class="stat safety-stat">
+                    Sistemas de reconhecimento facial reduziram em 35% os crimes contra o patrimônio em São Paulo (SSP-SP, 2024)
+                </div>
+                
+                <div class="solution safety-solution">
+                    <strong>Solução:</strong> Integração de câmeras com IA para análise de padrões suspeitos em tempo real, como o projeto piloto no Rio de Janeiro que identificou armas brancas com 92% de precisão, antecipando situações de violência.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="border-color: var(--transport);">Transporte Urbano</h2>
+            <div class="card transport-card">
+                <h3>Mobilidade como Serviço (MaaS)</h3>
+                <p>A integração de modais é chave para cidades mais fluídas.</p>
+                
+                <div class="stat transport-stat">
+                    Passageiros perdem em média 32 dias por ano no trânsito nas grandes cidades brasileiras (ANTP, 2024)
+                </div>
+                
+                <div class="solution transport-solution">
+                    <strong>Solução:</strong> Plataformas unificadas como o "Move Sampa" que combinam ônibus, metrô, bike e carros compartilhados em um único app, reduzindo tempo de deslocamento em até 25% nos testes em São Paulo.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="border-color: var(--education);">Educação do Futuro</h2>
+            <div class="card education-card">
+                <h3>Personalização com IA</h3>
+                <p>A tecnologia pode democratizar o acesso à educação de qualidade.</p>
+                
+                <div class="stat education-stat">
+                    Apenas 28% das escolas públicas têm infraestrutura adequada para ensino híbrido (INEP, 2023)
+                </div>
+                
+                <div class="solution education-solution">
+                    <strong>Solução:</strong> Plataformas adaptativas como a desenvolvida pela USP que ajustam o conteúdo ao ritmo de cada aluno, elevando em 30% as notas de matemática em escolas testadas no Ceará.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 style="border-color: var(--connectivity);">Conectividade Universal</h2>
+            <div class="card connectivity-card">
+                <h3>Internet como Direito Básico</h3>
+                <p>A exclusão digital aprofunda desigualdades sociais.</p>
+                
+                <div class="stat connectivity-stat">
+                    20% da população rural ainda não tem acesso à internet banda larga (Anatel, 2024)
+                </div>
+                
+                <div class="solution connectivity-solution">
+                    <strong>Solução:</strong> Projetos como o "Internet Brasil" que levam conexão via satélite a áreas remotas, com meta de atender 3 milhões de estudantes até 2026, usando tecnologia similar à Starlink porém com custo 60% menor.
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h3>O Futuro é Colaborativo</h3>
+            <p>Estas soluções mostram que a tecnologia, quando aplicada com propósito social, pode transformar realidades e construir um país mais justo e eficiente para todos.</p>
+        </footer>
+    </div>
+</body>
+</html>
