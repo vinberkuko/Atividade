@@ -122,6 +122,21 @@
             color: var(--secondary);
         }
 
+        .back-btn {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #1a252f;
+        }
+        
         @media (max-width: 768px) {
             .grid {
                 grid-template-columns: 1fr;
@@ -141,6 +156,10 @@
         </div>
     </header>
 
+ <main class="container">
+        <a href="index.html" class="back-btn">← Voltar para a página inicial</a>
+
+    
     <main class="container">
         <a href="index.html" class="back-btn">← Voltar para a página inicial</a>
 
