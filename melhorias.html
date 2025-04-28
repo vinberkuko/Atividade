@@ -208,7 +208,22 @@
             border-radius: 15px;
             animation: fadeIn 1.5s ease-out;
         }
+        .back-btn {
+            display: inline-block;
+            margin: 2rem 0;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
 
+        .back-btn:hover {
+            background: #1a252f;
+        }
+
+        
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -230,6 +245,8 @@
             <h1>Tecnologia Transformadora</h1>
             <p>Como a inovação pode melhorar 5 áreas essenciais da sociedade</p>
         </header>
+ <main class="container">
+        <a href="index.html" class="back-btn">← Voltar para a página inicial</a>
 
         <section>
             <h2 style="border-color: var(--health);">Saúde Inteligente</h2>
